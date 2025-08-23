@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="171A19BD-2EED-5A3D-E3E9-1F50023996BA" name="Transaction">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 13:16:23 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="transaction_id" id="7906FF53-90D6-A68A-4270-02983376E73D">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:17:21 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="915E80EC-FE13-52F4-630F-F3C1B7A21FFB">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:57:57 UTC</createdTime>
+<generatorID>8BC23080-842E-9A12-83AF-37F6CF13322D</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<referedAttribute>EE02BB87-82A6-6FC0-4EB9-BC259DB79985</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="EE99FF5F-C4D4-98E2-DE6E-61C1FDF2309A">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 16:43:27 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status" id="9A0E8A4A-5C50-21AF-1AF3-CE268158FCE6">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 16:43:38 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="price" id="4524494A-1DDD-E07D-7941-7491A2ECA581">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 16:44:17 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="payment_method" id="E98A001B-A4CA-218B-E14F-4C7260C8EDD3">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 18:49:35 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="amount" id="57562C9F-34CA-7224-C1CE-F6DACFC9C177">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 18:49:53 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_id" id="5F982091-5DBE-9F1B-533F-1016CC64B9E6">
+<createdBy>mateo</createdBy>
+<createdTime>2025-03-25 02:29:09 UTC</createdTime>
+<generatorID>E6B5A4C1-E0CB-1C77-4EE3-0B16D62FD494</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<referedAttribute>0A8FFB06-1064-5843-3A3C-8D161C4A81CF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="order_id" id="E9D651C8-ECEB-17F5-D05E-A90CD7D967B0">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 16:28:56 UTC</createdTime>
+<generatorID>38B5829E-5136-9732-9CF5-451B73329633</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<referedAttribute>2BB86AB6-C0DD-82DD-398D-12B459B2038D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="278D18BD-A47E-47D2-E0AD-2557FB14D048" name="Transaction PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:30:20 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7906FF53-90D6-A68A-4270-02983376E73D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

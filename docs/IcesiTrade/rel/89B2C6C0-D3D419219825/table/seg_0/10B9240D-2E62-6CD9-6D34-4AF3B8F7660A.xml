@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10B9240D-2E62-6CD9-6D34-4AF3B8F7660A" name="Permit_listing">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Rol_rol_id" id="A54A14BD-46AB-14F2-E3EF-B10D94354534">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="084D6E9A-1F3C-25D8-49A8-6F213F2516F2" referredColumn="8C7CDC98-F361-6056-707A-30160829E096"/>
+</associations>
+</Column>
+<Column name="Permission_permission_id" id="13CBD8F1-B8D3-D634-6887-3817C3EB0087">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1FD772C2-A374-A941-B0FB-7D5FB3FE8BF9" referredColumn="895D7FD3-E737-FEE4-3702-8FA90D4BD04C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8BCCE317-D50C-20A7-8D15-D53122CFC141" name="Permit_listing_PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A54A14BD-46AB-14F2-E3EF-B10D94354534"/>
+<colUsage columnID="13CBD8F1-B8D3-D634-6887-3817C3EB0087"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2464537-828B-8577-1524-F30CB398CDD4" name="Permit_listing_Rol_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>F37A03DB-1ED1-38F6-7494-C8438CF79559</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A54A14BD-46AB-14F2-E3EF-B10D94354534"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36C3D1A8-9797-7DB7-8618-BCFCF96441CF" name="Permit_listing_Permission_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<generatorID>F37A03DB-1ED1-38F6-7494-C8438CF79559</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13CBD8F1-B8D3-D634-6887-3817C3EB0087"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

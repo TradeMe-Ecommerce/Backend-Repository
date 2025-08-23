@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Una transaccion puede tener varias" directorySegmentName="seg_0" id="83D15FB6-C563-8D8C-2422-6B4B7EC44B43">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:31:09 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<sourcePk>278D18BD-A47E-47D2-E0AD-2557FB14D048</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>171A19BD-2EED-5A3D-E3E9-1F50023996BA</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>6871F9F2-E2F4-E4D5-1DF2-B2CE484033BB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

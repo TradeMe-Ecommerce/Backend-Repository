@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/sign_up.css}" />
+</head>
+<body>
+
+<div class="register-container animated">
+    <div class="register-header">
+        <h2>Crea tu cuenta</h2>
+        <p>Únete a nuestra comunidad en minutos</p>
+    </div>
+
+    <div class="register-form">
+        <form th:action="@{/sign_up}" method="post" th:object="${user}" id="registerForm">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            
+            <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <div class="input-group">
+                    <input type="text" id="name" th:field="*{name}" placeholder="Tu nombre completo" required>
+                    <span class="input-icon">👤</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <div class="input-group">
+                    <input type="email" id="email" th:field="*{email}" placeholder="correo@ejemplo.com" required>
+                    <span class="input-icon">✉️</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <div class="input-group">
+                    <input type="password" id="password" th:field="*{password}" placeholder="Crea una contraseña segura" required>
+                    <span class="input-icon">🔒</span>
+                    <span class="password-toggle" onclick="togglePassword()">👁️</span>
+                </div>
+                
+                <div class="password-requirements">
+                    <h4>Tu contraseña debe contener:</h4>
+                    <div class="requirement" id="req-length">
+                        <span class="requirement-icon">○</span>
+                        <span class="requirement-text">Mínimo 8 caracteres</span>
+                    </div>
+                    <div class="requirement" id="req-lowercase">
+                        <span class="requirement-icon">○</span>
+                        <span class="requirement-text">Al menos una letra minúscula</span>
+                    </div>
+                    <div class="requirement" id="req-uppercase">
+                        <span class="requirement-icon">○</span>
+                        <span class="requirement-text">Al menos una letra mayúscula</span>
+                    </div>
+                    <div class="requirement" id="req-number">
+                        <span class="requirement-icon">○</span>
+                        <span class="requirement-text">Al menos un número</span>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="password-strength"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <div class="input-group">
+                    <input type="tel" id="phone" th:field="*{phone}" placeholder="Tu número de teléfono" required>
+                    <span class="input-icon">📱</span>
+                </div>
+            </div>
+
+            <button type="submit" class="register-button" id="submitBtn" disabled>Crear cuenta</button>
+
+            <div class="message" th:if="${param.error}">
+                <p class="error">Ocurrió un error durante el registro, por favor intenta nuevamente</p>
+            </div>
+            <div th:if="${error}" class="message">
+                <p class="error" th:text="${error}"></p>
+            </div>
+        </form>
+
+        <div class="login-link">
+            ¿Ya tienes cuenta? <a th:href="@{/login}">Inicia sesión</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toggle password visibility
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.querySelector('.password-toggle');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.textContent = '👁️‍🗨️';
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.textContent = '👁️';
+        }
+    }
+    
+    // Password validation
+    const passwordInput = document.getElementById('password');
+    const submitBtn = document.getElementById('submitBtn');
+    const reqLength = document.getElementById('req-length');
+    const reqLowercase = document.getElementById('req-lowercase');
+    const reqUppercase = document.getElementById('req-uppercase');
+    const reqNumber = document.getElementById('req-number');
+    const strengthBar = document.getElementById('password-strength');
+    
+    passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        let score = 0;
+        
+        // Check requirements
+        const hasLength = password.length >= 8;
+        const hasLowercase = /[a-z]/.test(password);
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        
+        // Update requirement indicators
+        updateRequirement(reqLength, hasLength);
+        updateRequirement(reqLowercase, hasLowercase);
+        updateRequirement(reqUppercase, hasUppercase);
+        updateRequirement(reqNumber, hasNumber);
+        
+        // Calculate password strength
+        if (hasLength) score += 25;
+        if (hasLowercase) score += 25;
+        if (hasUppercase) score += 25;
+        if (hasNumber) score += 25;
+        
+        // Update strength bar
+        strengthBar.style.width = score + '%';
+        
+        // Enable or disable submit button
+        submitBtn.disabled = !(hasLength && hasLowercase && hasUppercase && hasNumber);
+    });
+    
+    function updateRequirement(element, valid) {
+        const icon = element.querySelector('.requirement-icon');
+        
+        if (valid) {
+            element.classList.add('valid');
+            element.classList.remove('invalid');
+            icon.textContent = '✓';
+        } else {
+            element.classList.add('invalid');
+            element.classList.remove('valid');
+            icon.textContent = '○';
+        }
+    }
+</script>
+
+</body>
+</html>

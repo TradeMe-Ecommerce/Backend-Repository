@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52930E38-EBCB-28CB-150D-C2DFE8F45AF4" name="Permission">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>B74E83FC-A4FF-2B28-99D0-49EE828A7745</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="permission_id" id="895D7FD3-E737-FEE4-3702-8FA90D4BD04C">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>B707BC76-8E87-9AAA-7165-E19B7366F846</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="83489292-0EAE-C635-5F85-C293D5D3BDEB">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>4E9BA9A1-4F91-A2F7-A608-A91C98FC510E</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="E4CB8111-514A-FC80-4668-52436A87312D">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>E33DB0CC-0CB7-82B0-E3E4-0BF1F26DA17A</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 CHAR</dataTypeSize>
+<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1934A2E6-41A2-3422-C7C1-6CFD092BE8F7" name="Permission_PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>703A5839-7E95-5B26-25A7-61EB982F07CC</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="895D7FD3-E737-FEE4-3702-8FA90D4BD04C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

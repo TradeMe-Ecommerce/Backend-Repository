@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4E73F7D1-6FBD-4058-DC2E-850BA38F1A81" name="Room">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:37:12 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="room_id" id="4FB4351A-CF6A-1B92-DF88-DE30FC090DE1">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:38:32 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="383A60A0-65F0-05F0-8DC7-04E38C12ED2B">
+<createdBy>mateo</createdBy>
+<createdTime>2025-03-25 01:57:10 UTC</createdTime>
+<generatorID>9411C5F8-91DA-83E8-9490-31AC3364FD40</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<referedAttribute>EE02BB87-82A6-6FC0-4EB9-BC259DB79985</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B6F7C554-DD7D-C134-BDDB-DB8232464153" name="Room PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:38:12 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4FB4351A-CF6A-1B92-DF88-DE30FC090DE1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

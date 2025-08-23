@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E0865446-19DA-FEE8-3046-5F055BA38E00" name="Rol">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 13:14:47 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rol_id" id="410D0438-D991-CEBC-39CA-76C744EC969F">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:36:08 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="FF3D775C-0F9C-C3E5-B124-FD4627847187">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 16:07:47 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="E8774F3E-29D5-A22D-CEFC-F782B2652B3B">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 16:08:01 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<ownDataTypeParameters>256 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4D1D9955-7B84-1AE5-37A0-98D130A20386" name="Rol PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:36:27 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>410D0438-D991-CEBC-39CA-76C744EC969F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

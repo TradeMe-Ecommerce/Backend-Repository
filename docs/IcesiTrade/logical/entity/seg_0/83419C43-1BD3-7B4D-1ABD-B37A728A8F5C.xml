@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="83419C43-1BD3-7B4D-1ABD-B37A728A8F5C" name="Favorite_listing">
+<createdBy>mateo</createdBy>
+<createdTime>2025-03-25 02:48:35 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="favorite_id" id="22DEC58E-80CA-27FA-D02A-D56A730BBB5C">
+<createdBy>mateo</createdBy>
+<createdTime>2025-03-25 02:49:02 UTC</createdTime>
+<generatorID>C47F617B-68B7-0A7D-F522-1D8B4E42A3A3</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<referedAttribute>FBCBE8DB-5DFD-D8E5-B7D4-ACFF52D8B79F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_id" id="E1F0496B-67FC-1CF6-3323-EC33B8D2649B">
+<createdBy>mateo</createdBy>
+<createdTime>2025-03-25 02:49:08 UTC</createdTime>
+<generatorID>A05072C6-F000-8092-9404-E92FFAD069B4</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<referedAttribute>0A8FFB06-1064-5843-3A3C-8D161C4A81CF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3DE39446-D0AF-31A0-E712-0F9CAD8F4287" name="Favorite_listing PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 16:12:16 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>22DEC58E-80CA-27FA-D02A-D56A730BBB5C</attributeRef>
+<attributeRef>E1F0496B-67FC-1CF6-3323-EC33B8D2649B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

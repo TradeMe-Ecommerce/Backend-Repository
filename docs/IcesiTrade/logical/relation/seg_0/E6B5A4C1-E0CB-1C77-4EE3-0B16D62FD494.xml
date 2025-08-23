@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_32" directorySegmentName="seg_0" id="E6B5A4C1-E0CB-1C77-4EE3-0B16D62FD494">
+<createdBy>mateo</createdBy>
+<createdTime>2025-03-25 02:28:44 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<sourcePk>278D18BD-A47E-47D2-E0AD-2557FB14D048</sourcePk>
+<targetPk>1A70884E-89BA-323C-3BF8-25074CE24D58</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>171A19BD-2EED-5A3D-E3E9-1F50023996BA</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>25CDCDB3-2514-F4D5-1053-B074750DC8BF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

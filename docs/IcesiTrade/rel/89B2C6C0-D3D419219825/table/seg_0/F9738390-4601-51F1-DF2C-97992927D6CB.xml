@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F9738390-4601-51F1-DF2C-97992927D6CB" name="History">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>1111FBE3-F932-8484-D49E-4895CEEC34E6</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="history_id" id="0EC19757-419D-D6DE-99BD-CCE5383B24C5">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>DB264F2B-904B-34B2-8DDE-0DB7B05C72F7</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="User_user_id" id="443DE952-B85F-BAA4-FAF9-B2E966623689">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>9C7F55E0-91C5-8649-95B3-DF75B9B4B370</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A131C560-A463-ECE9-5F51-25988D110400" referredColumn="15CFDBAF-F266-31D7-278E-3D0209202EC9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F8A111F-C6CB-E324-D172-BACE40D1BEC7" name="History_PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>CB7DCBA0-D39C-B9C8-16B3-6CE3EB46DCB1</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0EC19757-419D-D6DE-99BD-CCE5383B24C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9DE0B78D-D09B-644F-77BC-7C1D331988C3" name="History__IDX">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>4F1076EE-107B-0200-F852-D6F0710AC002</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="443DE952-B85F-BAA4-FAF9-B2E966623689"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="209026D6-FDD8-256C-56EA-BD3A02D9C083" name="History_User_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<generatorID>4F1076EE-107B-0200-F852-D6F0710AC002</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="443DE952-B85F-BAA4-FAF9-B2E966623689"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

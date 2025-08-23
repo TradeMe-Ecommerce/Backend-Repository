@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Una room puede tener varios mensajes" directorySegmentName="seg_0" id="E3FDA8AD-3495-D25E-F60F-652CFE0E3D5D">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:40:37 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<sourcePk>B6F7C554-DD7D-C134-BDDB-DB8232464153</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>4E73F7D1-6FBD-4058-DC2E-850BA38F1A81</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2AEFE1F2-D311-C4AD-B19A-3A78C53E6788</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

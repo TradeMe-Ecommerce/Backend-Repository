@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Un usuario tiene varias notificaciones" directorySegmentName="seg_0" id="4D0B6F49-A263-DF98-FCAE-1C6E95E09E19">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 15:42:37 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<sourcePk>8A2375FD-7FCF-1C00-AE26-C7CC79E4CE8B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5498699C-44EB-D967-F1AC-35B031E1F479</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6526DEB3-8A62-B932-C440-03C27596FDCB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

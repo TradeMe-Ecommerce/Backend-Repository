@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5464291F-EDB3-E0B9-45D0-DEEE9B81F83B" name="Shopping_cart">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>12C8BA58-662E-27A9-1A27-56F2870B787A</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="User_user_id" id="51371CF8-5724-D451-5E82-C401AAD95984">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>B8B04652-4980-0952-FDD3-0713F09F5396</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F6CC6723-5AC8-92DA-2BE0-DD321C9B5834" referredColumn="15CFDBAF-F266-31D7-278E-3D0209202EC9"/>
+</associations>
+</Column>
+<Column name="shopping_cart_id" id="C05F93F5-5178-D118-53B7-1F07021AD086">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>73A69A9A-48FF-3356-12E2-7710ACDAF21A</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E6E1DD4-A5EA-CF0A-54B4-AE5493411C23" name="Shopping_cart_PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>29D2E99D-BEC7-80F6-B4E7-00E61E795FEA</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C05F93F5-5178-D118-53B7-1F07021AD086"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F694B8C-2336-74C4-C88C-12DFEC03BCEA" name="Shopping_cart__IDX">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>04C7D58E-5532-A95C-FD77-5F702BF0FFED</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="51371CF8-5724-D451-5E82-C401AAD95984"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="534B12A1-3BC1-E7AB-7750-0D90D3BFFD7C" name="Shopping_cart_User_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<generatorID>04C7D58E-5532-A95C-FD77-5F702BF0FFED</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51371CF8-5724-D451-5E82-C401AAD95984"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Permission List</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+</head>
+<body>
+<div class="container fade-in">
+    <h1>Permissions</h1>
+    <div class="card" th:each="permission : ${permissions}">
+        <p><strong>ID:</strong> <span th:text="${permission.getId()}">ID</span></p>
+        <p><strong>Name:</strong> <span th:text="${permission.getName()}">Name</span></p>
+        <p><strong>Description:</strong> <span th:text="${permission.getDescription()}">Description</span></p>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <a class="btn btn-primary" th:href="@{/permission/add}">Create New Permission</a>
+        <a class="btn btn-secondary" th:href="@{/home/admin}">Back to Admin</a>
+    </div>
+</div>
+</body>
+</html>

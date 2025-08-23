@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/user_list.css}">
+</head>
+<body>
+<div class="container user-container">
+    <h1>User Management</h1>
+    
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="userSearch" class="search-input" placeholder="Search users by name, email or role...">
+    </div>
+
+    <ul class="user-list fade-in">
+        <li th:each="user : ${users}" class="user-item slide-up">
+            <div class="user-header">
+                <div class="user-avatar">
+                    <span th:text="${#strings.substring(user.getName(), 0, 1)}">A</span>
+                </div>
+                <div>
+                    <h3 class="user-name" th:text="${user.getName()}">Name</h3>
+                    <div class="user-role" th:text="${user.getRole().getName()}">Role</div>
+                </div>
+            </div>
+            
+            <div class="user-body">
+                <div class="user-info">
+                    <p><i class="fas fa-envelope"></i> <span th:text="${user.getEmail()}">Email</span></p>
+                    <p><i class="fas fa-phone"></i> <span th:text="${user.getPhone()}">Phone</span></p>
+                    <p><i class="fas fa-calendar"></i> <span th:text="${#dates.format(user.getDate(), 'MM/dd/yyyy')}">Date</span></p>
+                </div>
+            </div>
+            
+            <div class="user-footer">
+                <a class="details-button" th:href="@{/user/details(id=${user.getId()})}">
+                    Details <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </li>
+    </ul>
+    
+    <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#"><i class="fas fa-chevron-right"></i></a>
+    </div>
+
+    <div class="back-section">
+        <a th:href="@{/home/admin}" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Admin
+        </a>
+    </div>
+</div>
+
+<script>
+    // Simple search functionality
+    document.getElementById('userSearch').addEventListener('keyup', function() {
+        let searchValue = this.value.toLowerCase();
+        let users = document.querySelectorAll('.user-item');
+        
+        users.forEach(user => {
+            let userName = user.querySelector('.user-name').innerText.toLowerCase();
+            let userEmail = user.querySelector('.user-info p:nth-child(1) span').innerText.toLowerCase();
+            let userRole = user.querySelector('.user-role').innerText.toLowerCase();
+            
+            if (userName.includes(searchValue) || userEmail.includes(searchValue) || userRole.includes(searchValue)) {
+                user.style.display = '';
+            } else {
+                user.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>

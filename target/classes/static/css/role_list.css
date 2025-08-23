@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.role-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fafafa;
+}
+
+.role-info {
+    flex: 1;
+}
+
+.role-info h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2e7d32;
+}
+
+.role-info p {
+    margin: 0.25rem 0;
+    color: #555;
+}
+
+.permission-list {
+    margin-top: 0.5rem;
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+
+.actions a,
+.actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.edit-button {
+    background-color: #0288d1;
+    color: white;
+}
+
+.delete-button {
+    background-color: #e53935;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #0277bd;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}
+
+.add-role {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #388e3c;
+    text-decoration: none;
+}
+

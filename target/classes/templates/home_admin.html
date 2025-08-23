@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/home_admin.css}">
+</head>
+<body>
+<div class="container admin-container">
+    <div class="welcome-section slide-up">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome back! Manage your system from here.</p>
+    </div>
+
+    <div class="admin-dashboard fade-in">
+        <div class="dashboard-card">
+            <i class="fas fa-users"></i>
+            <h3>Users</h3>
+            <p>Manage user accounts and permissions</p>
+            <a th:href="@{/user}" class="btn">View Users</a>
+        </div>
+        
+        <div class="dashboard-card">
+            <i class="fas fa-user-tag"></i>
+            <h3>Roles</h3>
+            <p>Configure system roles and access levels</p>
+            <a th:href="@{/role}" class="btn">View Roles</a>
+        </div>
+        
+        <div class="dashboard-card">
+            <i class="fas fa-key"></i>
+            <h3>Permissions</h3>
+            <p>Customize system permissions</p>
+            <a th:href="@{/permission}" class="btn">View Permissions</a>
+        </div>
+    </div>
+
+    <div class="admin-footer">
+        <p>System Admin Panel • Version 2.0</p>
+    </div>
+
+    <div class="logout-section">
+        <form method="post" th:action="@{/logout}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <button type="submit" class="btn logout-btn"><i class="fas fa-sign-out-alt mr-1"></i> Log Out</button>
+        </form>
+    </div>
+    
+    <p th:if="${success}" th:text="${success}" class="success-msg"></p>
+</div>
+
+<script>
+    // Simple fade-in animation for dashboard cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.dashboard-card');
+        
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+            }, 100 * index);
+        });
+    });
+</script>
+</body>
+</html>

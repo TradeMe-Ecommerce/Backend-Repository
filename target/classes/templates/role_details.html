@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Role</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+</head>
+<body>
+<div class="container fade-in">
+    <h1>Edit Role: <span th:text="${role.getName()}">Role Name</span></h1>
+
+    <form th:action="@{/role/details}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <input type="hidden" th:name="roleId" th:value="${role.getId()}"/>
+
+        <div class="form-group">
+            <label>Permissions:</label>
+            <div class="d-flex flex-wrap" style="gap: 1rem;">
+                <div th:each="permission : ${permissions}">
+                    <label>
+                        <input type="checkbox" name="permissions" th:value="${permission.getId()}"
+                               th:checked="${role.permissions.contains(permission)}"/>
+                        <span th:text="${permission.getName()}">Permission</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Update Role</button>
+    </form>
+
+    <div class="mt-4">
+        <a th:href="@{/role}" class="btn btn-outline">Back to Role List</a>
+    </div>
+</div>
+</body>
+</html>

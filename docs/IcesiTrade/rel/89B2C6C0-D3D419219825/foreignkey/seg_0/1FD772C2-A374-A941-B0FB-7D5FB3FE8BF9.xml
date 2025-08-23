@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1FD772C2-A374-A941-B0FB-7D5FB3FE8BF9" containerWithKeyObject="10B9240D-2E62-6CD9-6D34-4AF3B8F7660A" localFKIndex="36C3D1A8-9797-7DB7-8618-BCFCF96441CF" name="Permit_listing_Permission_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<generatorID>F37A03DB-1ED1-38F6-7494-C8438CF79559</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<referredTableLongName>Permission</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>52930E38-EBCB-28CB-150D-C2DFE8F45AF4</referredTableID>
+<keyObject>1934A2E6-41A2-3422-C7C1-6CFD092BE8F7</keyObject>
+<referredKeyID>1934A2E6-41A2-3422-C7C1-6CFD092BE8F7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>permission_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Permit_listing" directorySegmentName="seg_0" id="F37A03DB-1ED1-38F6-7494-C8438CF79559">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-24 13:19:40 UTC</createdTime>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<engineerTo>
+<item key="89B2C6C0-AB20-168F-5EDA-D3D419219825" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>E0865446-19DA-FEE8-3046-5F055BA38E00</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B74E83FC-A4FF-2B28-99D0-49EE828A7745</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

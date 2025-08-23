@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/user_details.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+<div class="container user-details-container">
+    <h1>User Details</h1>
+
+    <!-- User Profile Header Section -->
+    <div class="user-profile-header slide-up">
+        <div class="user-avatar-large" th:text="${#strings.substring(user.getName(), 0, 1).toUpperCase()}">U</div>
+        <div class="user-profile-info">
+            <h2 th:text="${user.getName()}">User Name</h2>
+            <div class="user-profile-meta">
+                <span><i class="fas fa-envelope"></i> <span th:text="${user.getEmail()}">user@example.com</span></span>
+                <span><i class="fas fa-phone"></i> <span th:text="${user.getPhone()}">+1 234 567 890</span></span>
+                <span><i class="fas fa-calendar"></i> <span th:text="${#dates.format(user.getDate(), 'dd/MM/yyyy')}">01/01/2023</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Details Section -->
+    <div class="details-section">
+        <!-- Personal Details Card -->
+        <div class="detail-card fade-in">
+            <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+            <div class="detail-row">
+                <div class="detail-label">Role</div>
+                <div class="detail-value" th:text="${user.getRole().getName()}">Admin</div>
+                <div class="detail-action">
+                    <a th:href="@{/user/edit_role(id=${user.getId()})}" class="edit-link">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Email</div>
+                <div class="detail-value" th:text="${user.getEmail()}">user@example.com</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Phone</div>
+                <div class="detail-value" th:text="${user.getPhone()}">+1 234 567 890</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Joined</div>
+                <div class="detail-value" th:text="${#dates.format(user.getDate(), 'dd MMMM yyyy')}">01 January 2023</div>
+            </div>
+        </div>
+
+        <!-- User Activity Card -->
+        <div class="detail-card fade-in">
+            <h3><i class="fas fa-history"></i> User Activity</h3>
+            <div class="detail-row">
+                <div class="detail-label">History</div>
+                <div class="detail-value">User browsing history</div>
+                <div class="detail-action">
+                    <a th:href="@{/history(id=${user.getHistory().getId()})}" class="btn-primary btn-sm">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Favorites</div>
+                <div class="detail-value">Saved items</div>
+                <div class="detail-action">
+                    <a th:href="@{/favorite(id=${user.getFavorite().getId()})}" class="btn-primary btn-sm">
+                        <i class="fas fa-heart"></i> View
+                    </a>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Shopping Cart</div>
+                <div class="detail-value">Current items in cart</div>
+                <div class="detail-action">
+                    <a th:href="@{/shopping_cart(id=${user.getShoppingCart().getId()})}" class="btn-primary btn-sm">
+                        <i class="fas fa-shopping-cart"></i> View
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Rooms Section -->
+    <div class="detail-card fade-in mb-3">
+        <h3><i class="fas fa-door-open"></i> Rooms</h3>
+        <div class="list-container" th:if="${not #lists.isEmpty(user.getRooms())}">
+            <div class="detail-row" th:each="room : ${user.getRooms()}">
+                <div class="detail-label">Room ID</div>
+                <div class="detail-value" th:text="${room.getId()}">123456</div>
+                <div class="detail-action">
+                    <a th:href="@{/room(id=${room.getId()})}" class="btn-outline btn-sm">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="empty-list" th:if="${#lists.isEmpty(user.getRooms())}">
+            <p class="text-center">No rooms available</p>
+        </div>
+    </div>
+
+    <!-- User Notifications Section -->
+    <div class="detail-card fade-in mb-3">
+        <h3><i class="fas fa-bell"></i> Notifications</h3>
+        <div class="list-container" th:if="${not #lists.isEmpty(user.getNotifications())}">
+            <div class="detail-row" th:each="notif : ${user.getNotifications()}">
+                <div class="detail-label">Message</div>
+                <div class="detail-value" th:text="${notif.getDescription()}">Notification message</div>
+                <div class="detail-action">
+                    <a href="#" class="btn-danger btn-sm">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="empty-list" th:if="${#lists.isEmpty(user.getNotifications())}">
+            <p class="text-center">No notifications</p>
+        </div>
+    </div>
+
+    <!-- User Transactions Section -->
+    <div class="detail-card fade-in mb-3">
+        <h3><i class="fas fa-exchange-alt"></i> Transactions</h3>
+        <div class="list-container" th:if="${not #lists.isEmpty(user.getTransactions())}">
+            <div class="detail-row" th:each="t : ${user.getTransactions()}">
+                <div class="detail-value">
+                    <div class="transaction-info">
+                        <span class="transaction-id"><i class="fas fa-fingerprint"></i> <strong>ID:</strong> <span th:text="${t.getId()}">12345</span></span>
+                        <span class="transaction-date"><i class="fas fa-calendar-day"></i> <strong>Date:</strong> <span th:text="${#dates.format(t.getDate(), 'MM/dd/yyyy')}">01/01/2023</span></span>
+                        <span class="transaction-product"><i class="fas fa-box"></i> <strong>Product:</strong> <span th:text="${t.getProduct().getName()}">Product Name</span></span>
+                        <span class="transaction-amount"><i class="fas fa-dollar-sign"></i> <strong>Amount:</strong> <span th:text="${t.getAmount()}">$99.99</span></span>
+                        <span class="transaction-seller"><i class="fas fa-user"></i> <strong>Seller:</strong> <span th:text="${t.getUser().getName()}">Seller Name</span></span>
+                    </div>
+                </div>
+                <div class="detail-action">
+                    <a th:href="@{/transaction(id=${t.getId()})}" class="btn-primary btn-sm">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="empty-list" th:if="${#lists.isEmpty(user.getTransactions())}">
+            <p class="text-center">No transactions available</p>
+        </div>
+    </div>
+
+    <!-- User Inventory Section -->
+    <div class="detail-card fade-in mb-3">
+        <h3><i class="fas fa-box-open"></i> Inventory</h3>
+        <div class="list-container" th:if="${not #lists.isEmpty(user.getInventories())}">
+            <div class="detail-row" th:each="i : ${user.getInventories()}">
+                <div class="detail-label">Item</div>
+                <div class="detail-value" th:text="${i.getProduct().getName()}">Product Name</div>
+                <div class="detail-action">
+                    <a th:href="@{/product(id=${i.getProduct().getId()})}" class="btn-primary btn-sm">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="empty-list" th:if="${#lists.isEmpty(user.getInventories())}">
+            <p class="text-center">No inventory items</p>
+        </div>
+    </div>
+
+    <!-- Back to User List Button -->
+    <div class="back-section">
+        <a th:href="@{/user}" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to User List
+        </a>
+    </div>
+</div>
+</body>
+</html>

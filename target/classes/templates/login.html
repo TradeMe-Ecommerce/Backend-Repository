@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-header">
+        <h2>Iniciar Sesión</h2>
+        <p>Ingresa tus credenciales para continuar</p>
+    </div>
+
+    <div class="login-form">
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label for="username">Correo Electrónico</label>
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="correo@ejemplo.com" required>
+                    <span class="input-icon">✉️</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Tu contraseña segura" required>
+                    <span class="input-icon">🔒</span>
+                    <span class="password-toggle" onclick="togglePassword()">👁️</span>
+                </div>
+            </div>
+
+            <button type="submit" class="login-button">Ingresar</button>
+
+            <div class="message" th:if="${param.error}">
+                <p class="error">Correo o contraseña incorrectos</p>
+            </div>
+
+            <div class="message" th:if="${param.logout}">
+                <p class="success">Has cerrado sesión correctamente</p>
+            </div>
+        </form>
+
+        <div class="divider">
+            <hr><span>O</span><hr>
+        </div>
+
+        <div class="social-login">
+            <button class="social-btn" title="Continuar con Google">G</button>
+            <button class="social-btn" title="Continuar con Facebook">f</button>
+            <button class="social-btn" title="Continuar con Apple">🍎</button>
+        </div>
+
+        <div class="sign-up-link">
+            ¿No tienes cuenta? <a th:href="@{/sign_up}">Regístrate ahora</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="http://localhost:5173/login" style="text-decoration: none;">
+                <button style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    App Login
+                </button>
+            </a>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.querySelector('.password-toggle');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.textContent = '👁️‍🗨️';
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.textContent = '👁️';
+        }
+    }
+</script>
+
+</body>
+</html>

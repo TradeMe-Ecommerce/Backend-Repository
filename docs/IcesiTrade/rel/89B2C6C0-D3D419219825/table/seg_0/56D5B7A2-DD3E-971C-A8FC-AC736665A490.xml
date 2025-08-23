@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56D5B7A2-DD3E-971C-A8FC-AC736665A490" name="Inventory">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>9EF1AF96-1E0F-049B-AC9B-4ACA4CDFABDB</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="stock" id="9678A97E-3529-A0DC-54E9-328EA2A1D5F2">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>9A6947AA-560E-52B1-33A1-3C1549C6A9BD</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="User_user_id" id="6186FD47-CF6A-332F-49D0-BF0D17A2077D">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>7F4EC38D-0A24-9E9C-0D05-FA452499D064</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D3FA97B-80D2-F4DA-287C-B49DE9FE545A" referredColumn="15CFDBAF-F266-31D7-278E-3D0209202EC9"/>
+</associations>
+</Column>
+<Column name="Product_product_id" id="00CFA3C8-73AE-ECF8-219C-97C8A0CA80BF">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>DB87D5CA-59DD-9242-E1C0-CDCEF81B7745</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5450EFF6-0BFC-93E2-9264-60D11B11AD2C" referredColumn="1475A6C3-E67E-02FF-3F14-9E6063394BA7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2FE8B791-F6F0-F97F-FD9D-38E7E92AD60D" name="Inventory_PK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:45 UTC</createdTime>
+<generatorID>14569A40-7BBA-AD66-9E4F-5FFC89044727</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00CFA3C8-73AE-ECF8-219C-97C8A0CA80BF"/>
+<colUsage columnID="6186FD47-CF6A-332F-49D0-BF0D17A2077D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E329A63-9846-A98A-FD62-6FC0881C483A" name="Inventory_User_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<generatorID>140AE2C1-AD63-FDD1-F3EA-9E591609FD3F</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6186FD47-CF6A-332F-49D0-BF0D17A2077D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9BBA0F68-2D78-3E42-6A62-64E6A13DE89A" name="Inventory_Product_FK">
+<createdBy>geoff</createdBy>
+<createdTime>2025-03-25 17:18:46 UTC</createdTime>
+<generatorID>BA423B9F-8D8B-C81B-B729-F30AF6E87C5F</generatorID>
+<ownerDesignName>IcesiTrade</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00CFA3C8-73AE-ECF8-219C-97C8A0CA80BF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
