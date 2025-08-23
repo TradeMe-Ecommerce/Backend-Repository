@@ -1,13 +1,7 @@
 ﻿# ICESI TRADE
 
-- [Link Enunciado](https://docs.google.com/document/d/1Fg4nFzLBtSaOK7Rmn8kRuIUHuO65des1K24Dt66UWgI/edit?tab=t.0#heading=h.r2ge05vq56dz)
-- [Link Entrega 1](https://docs.google.com/document/d/1tK_muqBr7ln06HvAxWgOfgS1exKQYK5S/edit?tab=t.0)
-- [Link Entrega 2](https://docs.google.com/file/d/1Py-Sxh_E5yLJ0SNuNIP1N5Qo8y5lQbc0/edit?filetype=msword)
-- [Link Entrega 3](https://docs.google.com/document/d/13w-40MIR2gQ3eCzkCI9nrP74LiEFxvMe/edit?tab=t.0)
-
 Este proyecto es una aplicación backend desarrollada en Spring Boot que se conecta a una base de datos PostgreSQL. La integración se realiza a través de Docker y Docker Compose. Sigue esta guía para configurar y ejecutar el proyecto en tu máquina, ya sea con Linux o Windows.
 
-- **Aplicación en producción aquí 🚀:  http://10.147.17.127:8080/IcesiTrade**
 - **Pruebas de CRUD basico en Postman aquí: https://app.getpostman.com/join-team?invite_code=40db17d13fb29f1f87beb13c2ab48ed4c84415c478ca1f81c6d62117bce6a0e9&target_code=baea0ee117802cf0addd9b2fcd5d1a97** 
 - **Documentación de api : http://localhost:8080/swagger-ui/index.html#/**
 
