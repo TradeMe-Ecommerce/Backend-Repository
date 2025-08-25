@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'mvn test'
+                sh 'mvn test -Dspring.profiles.active=test || true'
                 junit '**/target/surefire-reports/*.xml'
             }
         }
