@@ -1,9 +1,10 @@
 pipeline {
     agent any
-
+    
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials') 
-        DOCKER_IMAGE = "geoffrey0pv/backend-trademe-ecommerce"
+        dockerimagename = "geoffrey0pv/backend-trademe-ecommerce"
+        dockerImage = ""
+        registryCredential = 'dockerhub-credentials'
     }
 
     stages {
@@ -21,24 +22,54 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                   sh 'echo "Skipping tests in pipeline"'
+                sh 'echo "Skipping tests in pipeline"'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE:$BUILD_NUMBER .'
+                script {
+                    dockerImage = docker.build("${dockerimagename}:${BUILD_NUMBER}")
+                }
             }
         }
 
         stage('Push DockerHub') {
             steps {
-                withDockerRegistry([ credentialsId: 'dockerhub-credentials', url: '' ]) {
-                    sh 'docker push $DOCKER_IMAGE:$BUILD_NUMBER'
-                    sh 'docker tag $DOCKER_IMAGE:$BUILD_NUMBER $DOCKER_IMAGE:latest'
-                    sh 'docker push $DOCKER_IMAGE:latest'
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+                        dockerImage.push("${BUILD_NUMBER}")
+                        
+                        dockerImage.push("latest")
+                    }
                 }
             }
+        }
+        
+        stage('Cleanup') {
+            steps {
+                script {
+                    sh "docker rmi ${dockerimagename}:${BUILD_NUMBER} || true"
+                    sh "docker rmi ${dockerimagename}:latest || true"
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            sh 'docker system prune -f || true'
+        }
+        success {
+            echo "Pipeline ejecutado exitosamente!"
+            echo "Imagen disponible en DockerHub: ${dockerimagename}:${BUILD_NUMBER}"
+            echo "También disponible como: ${dockerimagename}:latest"
+        }
+        failure {
+            echo "Pipeline falló. Revisa los logs para más detalles."
+        }
+        cleanup {
+            cleanWs()
         }
     }
 }
