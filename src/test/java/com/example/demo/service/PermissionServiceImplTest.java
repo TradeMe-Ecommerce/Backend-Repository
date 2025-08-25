@@ -2,18 +2,20 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Permission;
 import com.example.demo.repository.PermissionRepository;
-import com.example.demo.service.PermissionService;
 import com.example.demo.service.impl.PermissionServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import java.util.ArrayList;
+
 import java.util.List;
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PermissionServiceImplTest {
@@ -24,83 +26,110 @@ public class PermissionServiceImplTest {
     @InjectMocks
     private PermissionServiceImpl permissionService;
 
+    private Permission permission;
+
+    @BeforeEach
+    void setUp() {
+        permission = new Permission();
+        permission.setId(1L);
+        permission.setName("READ_PRIVILEGES");
+        permission.setDescription("Permission to read data");
+    }
+
     @Test
     public void testCreatePermission() {
-        Permission permission = new Permission();
-        permission.setName("READ");
-        permission.setDescription("Permission to read data");
+        // Arrange
+        when(permissionRepository.save(any(Permission.class))).thenReturn(permission);
 
-        // Simulamos que el repositorio asigna un ID al guardar el permiso
-        when(permissionRepository.save(any(Permission.class))).thenAnswer(invocation -> {
-            Permission saved = invocation.getArgument(0);
-            saved.setId(1L);
-            return saved;
-        });
+        // Act
+        Permission created = permissionService.createPermission(new Permission());
 
-        Permission created = permissionService.createPermission(permission);
+        // Assert
         assertNotNull(created);
-        assertEquals(1L, created.getId());
+        assertEquals(permission.getId(), created.getId());
+        verify(permissionRepository, times(1)).save(any(Permission.class));
     }
 
     @Test
     public void testFindAllPermissions() {
-        List<Permission> permissions = new ArrayList<>();
-        Permission p1 = new Permission();
-        p1.setId(1L);
-        p1.setName("READ");
-        Permission p2 = new Permission();
-        p2.setId(2L);
-        p2.setName("WRITE");
-        permissions.add(p1);
-        permissions.add(p2);
+        // Arrange
+        Permission anotherPermission = new Permission();
+        anotherPermission.setId(2L);
+        anotherPermission.setName("WRITE_PRIVILEGES");
+        when(permissionRepository.findAll()).thenReturn(List.of(permission, anotherPermission));
 
-        when(permissionRepository.findAll()).thenReturn(permissions);
-
+        // Act
         List<Permission> result = permissionService.findAll();
+
+        // Assert
         assertNotNull(result);
         assertEquals(2, result.size());
-        assertEquals("READ", result.get(0).getName());
-        assertEquals("WRITE", result.get(1).getName());
+        assertEquals("READ_PRIVILEGES", result.get(0).getName());
     }
 
     @Test
     public void testUpdatePermission() {
-        Permission permission = new Permission();
-        permission.setId(1L);
-        permission.setName("READ");
-        permission.setDescription("Permission to read data");
-
-        // Simulamos que el permiso existe
-        when(permissionRepository.existsById(1L)).thenReturn(true);
-
-        // Simulamos la actualización: modificamos la descripción
-        permission.setDescription("Updated permission to read data");
+        // Arrange
+        when(permissionRepository.findById(1L)).thenReturn(Optional.of(permission));
         when(permissionRepository.save(any(Permission.class))).thenReturn(permission);
 
-        Permission updated = permissionService.updatePermission(permission);
+        Permission permissionToUpdate = new Permission();
+        permissionToUpdate.setId(1L);
+        permissionToUpdate.setDescription("Updated description");
+
+        // Act
+        Permission updated = permissionService.updatePermission(permissionToUpdate);
+
+        // Assert
         assertNotNull(updated);
-        assertEquals("Updated permission to read data", updated.getDescription());
+        assertEquals("Updated description", updated.getDescription());
+        verify(permissionRepository, times(1)).findById(1L);
+        verify(permissionRepository, times(1)).save(any(Permission.class));
     }
 
     @Test
     public void testUpdatePermissionNotFound() {
-        Permission permission = new Permission();
-        permission.setId(99L);
-        permission.setName("Nonexistent");
+        // Arrange
+        when(permissionRepository.findById(99L)).thenReturn(Optional.empty());
+        Permission nonExistentPermission = new Permission();
+        nonExistentPermission.setId(99L);
 
-        when(permissionRepository.existsById(99L)).thenReturn(false);
-
+        // Act & Assert
         Exception exception = assertThrows(RuntimeException.class, () -> {
-            permissionService.updatePermission(permission);
+            permissionService.updatePermission(nonExistentPermission);
         });
-        assertEquals("Permission not found", exception.getMessage());
+
+        assertEquals("Permission not found with id: 99", exception.getMessage());
+        verify(permissionRepository, times(1)).findById(99L);
+        verify(permissionRepository, never()).save(any(Permission.class));
     }
 
     @Test
     public void testDeletePermission() {
+        // Arrange
         Long permissionId = 1L;
-        // No es necesario simular un comportamiento específico, solo verificar la llamada
+        when(permissionRepository.existsById(permissionId)).thenReturn(true);
+        doNothing().when(permissionRepository).deleteById(permissionId);
+
+        // Act
         permissionService.deletePermission(permissionId);
+
+        // Assert
         verify(permissionRepository, times(1)).deleteById(permissionId);
+    }
+
+    @Test
+    public void testDeletePermissionNotFound() {
+        // Arrange
+        Long permissionId = 99L;
+        when(permissionRepository.existsById(permissionId)).thenReturn(false);
+
+        // Act & Assert
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            permissionService.deletePermission(permissionId);
+        });
+
+        assertEquals("Permission not found with id: 99", exception.getMessage());
+        verify(permissionRepository, never()).deleteById(anyLong());
     }
 }
